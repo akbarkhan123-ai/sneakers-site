@@ -97,7 +97,7 @@ beforeBtn.addEventListener('click', () => {
 
 const addToCartBtn = document.querySelector('.btn2');
 const cartContent = document.querySelector('.cart__content');
-const badge = document.querySelector('.cart-badge');
+const badge = document.querySelector('.cart__badge');
 
 addToCartBtn.addEventListener('click', () => {
 	if (counter === 0) return;
@@ -130,21 +130,18 @@ addToCartBtn.addEventListener('click', () => {
 				alt="delete"
 			>
 		</div>
-
 		<button class="checkout-btn">
 			Checkout
 		</button>
 	`;
 
 	const deleteBtn = document.querySelector('.delete-btn');
-
 	deleteBtn.addEventListener('click', () => {
 		cartContent.innerHTML = `
 			<div class="cart__empty">
 				Your cart is empty.
 			</div>
 		`;
-
 		counter = 0;
 		zero.textContent = 0;
 		badge.style.display = 'none';
@@ -156,11 +153,9 @@ addToCartBtn.addEventListener('click', () => {
 const popup = document.querySelector('.popup');
 const popupImg = document.querySelector('.big-img');
 const closePopup = document.querySelector('.close');
-
-const popupLeft = document.querySelector('.popup-left');
-const popupRight = document.querySelector('.popup-right');
-
-const popupImgs = document.querySelectorAll('.small-list img');
+const popupLeft = document.querySelector('.popup__left');
+const popupRight = document.querySelector('.popup__right');
+const popupImgs = document.querySelectorAll('.small__list img');
 
 // OPEN
 
@@ -181,11 +176,9 @@ closePopup.addEventListener('click', () => {
 
 popupRight.addEventListener('click', () => {
 	currentIndex++;
-
 	if (currentIndex >= images.length) {
 		currentIndex = 0;
 	}
-
 	popupImg.src = images[currentIndex];
 	mainImg.src = images[currentIndex];
 	selectedImage = images[currentIndex];
@@ -195,11 +188,9 @@ popupRight.addEventListener('click', () => {
 
 popupLeft.addEventListener('click', () => {
 	currentIndex--;
-
 	if (currentIndex < 0) {
 		currentIndex = images.length - 1;
 	}
-
 	popupImg.src = images[currentIndex];
 	mainImg.src = images[currentIndex];
 	selectedImage = images[currentIndex];
@@ -210,7 +201,6 @@ popupLeft.addEventListener('click', () => {
 popupImgs.forEach((img, index) => {
 	img.addEventListener('click', () => {
 		currentIndex = index;
-
 		popupImg.src = images[index];
 		mainImg.src = images[index];
 		selectedImage = images[index];

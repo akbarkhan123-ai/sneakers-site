@@ -117,7 +117,7 @@ img {
 
 /* BADGE */
 
-.cart-badge {
+.cart__badge {
 	position: absolute;
 	top: -8px;
 	right: 55px;
@@ -149,6 +149,7 @@ img {
 	height: 445px;
 	border-radius: 15px;
 	object-fit: cover;
+	cursor: pointer;
 }
 
 .hero__list {
@@ -417,25 +418,26 @@ img {
 .big-img {
 	width: 525px;
 	height: 525px;
+	cursor: pointer;
 	border-radius: 15px;
 	display: block;
 }
 
-.small-list {
+.small__list {
 	display: flex;
 	gap: 20px;
 	margin-top: 5px;
 }
 
-.small-list img {
+.small__list img {
 	width: 88px;
 	height: 88px;
 	border-radius: 10px;
 	cursor: pointer;
 }
 
-.popup-left,
-.popup-right {
+.popup__left,
+.popup__right {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -448,11 +450,11 @@ img {
 	z-index: 100;
 }
 
-.popup-left {
+.popup__left {
 	left: -28px;
 }
 
-.popup-right {
+.popup__right {
 	right: -28px;
 }
 
@@ -461,11 +463,15 @@ img {
 	margin-left: auto;
 	margin-bottom: 20px;
 	cursor: pointer;
+	transition: all 0.4s ease;
+}
+
+.close:hover {
 	filter: brightness(0) invert(1);
 }
 
-.popup-left,
-.popup-right {
+.popup__left,
+.popu__right {
 	display: flex;
 }
 
@@ -614,14 +620,6 @@ img {
 		right: 10px;
 	}
 
-	.before-btn img,
-	.after-btn img {
-		width: 55px;
-		height: 55px;
-		align-items: center;
-		justify-content: center;
-	}
-
 	.cart__content {
 		display: flex;
 		padding: 24px;
@@ -654,8 +652,8 @@ img {
 		display: none;
 	}
 
-	.popup-left,
-	.popup-right {
+	.popup__left,
+	.popup__right {
 		display: none;
 	}
 
