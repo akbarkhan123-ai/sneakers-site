@@ -10,7 +10,6 @@
 		<link rel="icon" href="images/header/icon-img.svg" />
 	</head>
 	<body>
-		<!-- HEADER START -->
 		<header class="header">
 			<div class="container">
 				<img class="menu__btn" src="images/header/menu.svg" alt="menu" />
@@ -26,9 +25,9 @@
 					<a href="#">Contact</a>
 				</nav>
 				<div class="header__images">
-					<img class="cart__icon" src="images/header/basket-img.svg" alt="basket-img" />
+					<img class="cart__icon" src="images/header/basket-img.svg" alt="cart" />
 					<span class="cart-badge">0</span>
-					<img class="user__img" src="images/header/icon-img.svg" alt="icon-img" />
+					<img class="user__img" src="images/header/icon-img.svg" alt="user" />
 					<div class="cart__box">
 						<h3>Cart</h3>
 						<div class="cart__content">
@@ -38,25 +37,32 @@
 				</div>
 			</div>
 		</header>
-		<!-- HEADER END -->
+
 		<hr />
 
-		<!-- HERO START -->
 		<section class="hero">
 			<div class="hero__left">
-				<img class="main-shoe-img" src="images/hero/Recsneaker big img.png" alt="shoe-img" />
+				<div class="mobile-slider">
+					<button class="before-btn">
+						<img src="images/hero/before.svg" alt="before-btn" />
+					</button>
+					<img class="main-shoe-img" src="images/hero/Recsneaker big img.png" alt="shoe" />
+					<button class="after-btn">
+						<img src="images/hero/after.svg" alt="after-btn" />
+					</button>
+				</div>
 				<ul class="hero__list">
 					<li class="hero__item">
 						<img src="images/hero/Recsneaker big img.png" alt="shoe-1" />
 					</li>
 					<li class="hero__item">
-						<img src="images/hero/shoe2-img.png" alt="shoe-2" />
+						<img src="images/hero/shoe2.png" alt="shoe-2" />
 					</li>
 					<li class="hero__item">
-						<img src="images/hero/shoe3-img.png" alt="shoe-3" />
+						<img src="images/hero/shoe3.png" alt="shoe-3" />
 					</li>
 					<li class="hero__item">
-						<img src="images/hero/shoe4-img.png" alt="shoe-4" />
+						<img src="images/hero/shoe4.png" alt="shoe-4" />
 					</li>
 				</ul>
 			</div>
@@ -64,7 +70,7 @@
 				<h1 class="right__title">Sneaker Company</h1>
 				<h2 class="right__title2">Fall Limited Edition Sneakers</h2>
 				<p class="right__text">
-					These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll
+					These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll
 					withstand everything the weather can offer.
 				</p>
 				<div class="price">
@@ -76,18 +82,45 @@
 				</div>
 				<div class="buttons">
 					<div class="counter">
-						<img class="minus-img" src="images/hero/minus.svg" alt="minus-img" />
+						<img class="minus-img" src="images/hero/minus.svg" alt="minus" />
 						<span class="zero">0</span>
-						<img class="plus-img" src="images/hero/plus.svg" alt="plus-img" />
+						<img class="plus-img" src="images/hero/plus.svg" alt="plus" />
 					</div>
 					<button class="btn2">
-						<img src="images/header/basket-img.svg" alt="basket-img" />
+						<img src="images/header/basket-img.svg" alt="cart" />
 						Add to cart
 					</button>
 				</div>
 			</div>
 		</section>
-		<!-- HERO END -->
+		<!-- POPUP -->
+		<div class="popup">
+			<div class="bg"></div>
+			<div class="box">
+				<img class="close" src="images/header/close.svg" alt="close" />
+				<button class="popup-left">
+					<img src="images/hero/before.svg" alt="before-img" />
+				</button>
+				<img class="big-img" src="images/hero/Recsneaker big img.png" alt="big-img" />
+				<button class="popup-right">
+					<img src="images/hero/after.svg" alt="after-img" />
+				</button>
+				<ul class="small-list">
+					<li class="hero__item">
+						<img src="images/hero/Recsneaker big img.png" alt="shoe-1" />
+					</li>
+					<li class="hero__item">
+						<img src="images/hero/shoe2.png" alt="shoe-2" />
+					</li>
+					<li class="hero__item">
+						<img src="images/hero/shoe3.png" alt="shoe-3" />
+					</li>
+					<li class="hero__item">
+						<img src="images/hero/shoe4.png" alt="shoe-" />
+					</li>
+				</ul>
+			</div>
+		</div>
 		<script src="js/main.js"></script>
 	</body>
 </html>

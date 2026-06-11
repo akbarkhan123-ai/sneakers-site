@@ -1,3 +1,5 @@
+// CART OPEN / CLOSE
+
 const cartIcon = document.querySelector('.cart__icon');
 const cartBox = document.querySelector('.cart__box');
 
@@ -39,17 +41,22 @@ minus.addEventListener('click', () => {
 	}
 });
 
-// IMAGE SWITCHER
+// IMAGES
+
+const images = ['images/hero/Recsneaker big img.png', 'images/hero/shoe2.png', 'images/hero/shoe3.png', 'images/hero/shoe4.png'];
 
 const mainImg = document.querySelector('.main-shoe-img');
-const thumbnails = document.querySelectorAll('.hero__item img');
+const thumbs = document.querySelectorAll('.hero__item img');
 
-let selectedImage = mainImg.src;
+let currentIndex = 0;
+let selectedImage = images[0];
 
-thumbnails.forEach(img => {
+thumbs.forEach((img, index) => {
 	img.addEventListener('click', () => {
-		mainImg.src = img.src;
-		selectedImage = img.src;
+		currentIndex = index;
+
+		mainImg.src = images[index];
+		selectedImage = images[index];
 
 		document.querySelectorAll('.hero__item').forEach(item => {
 			item.classList.remove('active');
@@ -57,6 +64,33 @@ thumbnails.forEach(img => {
 
 		img.parentElement.classList.add('active');
 	});
+});
+
+// MOBILE SLIDER
+
+const beforeBtn = document.querySelector('.before-btn');
+const afterBtn = document.querySelector('.after-btn');
+
+afterBtn.addEventListener('click', () => {
+	currentIndex++;
+
+	if (currentIndex >= images.length) {
+		currentIndex = 0;
+	}
+
+	mainImg.src = images[currentIndex];
+	selectedImage = images[currentIndex];
+});
+
+beforeBtn.addEventListener('click', () => {
+	currentIndex--;
+
+	if (currentIndex < 0) {
+		currentIndex = images.length - 1;
+	}
+
+	mainImg.src = images[currentIndex];
+	selectedImage = images[currentIndex];
 });
 
 // CART
@@ -113,7 +147,72 @@ addToCartBtn.addEventListener('click', () => {
 
 		counter = 0;
 		zero.textContent = 0;
-
 		badge.style.display = 'none';
+	});
+});
+
+// POPUP
+
+const popup = document.querySelector('.popup');
+const popupImg = document.querySelector('.big-img');
+const closePopup = document.querySelector('.close');
+
+const popupLeft = document.querySelector('.popup-left');
+const popupRight = document.querySelector('.popup-right');
+
+const popupImgs = document.querySelectorAll('.small-list img');
+
+// OPEN
+
+mainImg.addEventListener('click', () => {
+	if (window.innerWidth > 768) {
+		popup.style.display = 'flex';
+		popupImg.src = images[currentIndex];
+	}
+});
+
+// CLOSE
+
+closePopup.addEventListener('click', () => {
+	popup.style.display = 'none';
+});
+
+// NEXT
+
+popupRight.addEventListener('click', () => {
+	currentIndex++;
+
+	if (currentIndex >= images.length) {
+		currentIndex = 0;
+	}
+
+	popupImg.src = images[currentIndex];
+	mainImg.src = images[currentIndex];
+	selectedImage = images[currentIndex];
+});
+
+// PREV
+
+popupLeft.addEventListener('click', () => {
+	currentIndex--;
+
+	if (currentIndex < 0) {
+		currentIndex = images.length - 1;
+	}
+
+	popupImg.src = images[currentIndex];
+	mainImg.src = images[currentIndex];
+	selectedImage = images[currentIndex];
+});
+
+// SMALL IMAGES
+
+popupImgs.forEach((img, index) => {
+	img.addEventListener('click', () => {
+		currentIndex = index;
+
+		popupImg.src = images[index];
+		mainImg.src = images[index];
+		selectedImage = images[index];
 	});
 });
